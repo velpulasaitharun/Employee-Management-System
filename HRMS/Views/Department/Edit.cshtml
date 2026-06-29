@@ -1,0 +1,37 @@
+﻿@model HRMS.Models.Department
+
+<h2>Edit Department</h2>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden"
+           asp-for="DepartmentId" />
+
+    <div class="mb-3">
+        <label asp-for="DepartmentName"></label>
+
+        <input asp-for="DepartmentName"
+               class="form-control" />
+
+        <span asp-validation-for="DepartmentName"
+              class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Description</label>
+
+        <textarea asp-for="Description"
+                  class="form-control"></textarea>
+    </div>
+
+    <button type="submit"
+            class="btn btn-primary">
+        Update
+    </button>
+
+    <a asp-action="Index"
+       class="btn btn-secondary">
+        Back
+    </a>
+
+</form>

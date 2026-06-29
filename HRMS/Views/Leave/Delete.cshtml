@@ -1,0 +1,22 @@
+﻿@model HRMS.Models.LeaveRequest
+
+<h2>Delete Leave Request</h2>
+
+<h4>Are you sure you want to delete this leave request?</h4>
+
+<form asp-action="Delete" method="post">
+
+    <input type="hidden"
+           asp-for="LeaveRequestId" />
+
+    <button type="submit"
+            class="btn btn-danger">
+        Delete
+    </button>
+
+    <a asp-action="Index"
+       class="btn btn-secondary">
+        Cancel
+    </a>
+
+</form>

@@ -1,0 +1,360 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\constants\\customclaimtypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\constants\\customclaimtypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\controllers\\payrollcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\controllers\\payrollcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\controllers\\auditlogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\controllers\\auditlogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\controllers\\leavecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\controllers\\leavecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\controllers\\holidaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\controllers\\holidaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\controllers\\designationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\controllers\\designationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\views\\attendance\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\views\\attendance\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\views\\employee\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\views\\employee\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|c:\\users\\mtc-developer\\downloads\\hrms\\hrms\\hrms\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03FB71C4-BBEA-4A27-A5B2-4306898C6BC9}|HRMS\\HRMS.csproj|solutionrelative:hrms\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomClaimTypes.cs",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Constants\\CustomClaimTypes.cs",
+              "RelativeDocumentMoniker": "HRMS\\Constants\\CustomClaimTypes.cs",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Constants\\CustomClaimTypes.cs",
+              "RelativeToolTip": "HRMS\\Constants\\CustomClaimTypes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-20T20:21:01.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\appsettings.json",
+              "RelativeDocumentMoniker": "HRMS\\appsettings.json",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\appsettings.json",
+              "RelativeToolTip": "HRMS\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-20T19:40:40.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PayrollController.cs",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\PayrollController.cs",
+              "RelativeDocumentMoniker": "HRMS\\Controllers\\PayrollController.cs",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\PayrollController.cs",
+              "RelativeToolTip": "HRMS\\Controllers\\PayrollController.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAiwBsAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-20T19:39:09.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Program.cs",
+              "RelativeDocumentMoniker": "HRMS\\Program.cs",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Program.cs",
+              "RelativeToolTip": "HRMS\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-20T19:39:09.516Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DepartmentController.cs",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\DepartmentController.cs",
+              "RelativeDocumentMoniker": "HRMS\\Controllers\\DepartmentController.cs",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\DepartmentController.cs",
+              "RelativeToolTip": "HRMS\\Controllers\\DepartmentController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAcAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-20T19:39:09.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "HRMS\\Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "HRMS\\Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-20T19:39:09.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BaseController.cs",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\BaseController.cs",
+              "RelativeDocumentMoniker": "HRMS\\Controllers\\BaseController.cs",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\BaseController.cs",
+              "RelativeToolTip": "HRMS\\Controllers\\BaseController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-20T19:39:09.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AttendanceController.cs",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\AttendanceController.cs",
+              "RelativeDocumentMoniker": "HRMS\\Controllers\\AttendanceController.cs",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\AttendanceController.cs",
+              "RelativeToolTip": "HRMS\\Controllers\\AttendanceController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-20T19:39:09.536Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AuditLogController.cs",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\AuditLogController.cs",
+              "RelativeDocumentMoniker": "HRMS\\Controllers\\AuditLogController.cs",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\AuditLogController.cs",
+              "RelativeToolTip": "HRMS\\Controllers\\AuditLogController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-20T19:39:09.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LeaveController.cs",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\LeaveController.cs",
+              "RelativeDocumentMoniker": "HRMS\\Controllers\\LeaveController.cs",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\LeaveController.cs",
+              "RelativeToolTip": "HRMS\\Controllers\\LeaveController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-20T19:39:09.545Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HolidayController.cs",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\HolidayController.cs",
+              "RelativeDocumentMoniker": "HRMS\\Controllers\\HolidayController.cs",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\HolidayController.cs",
+              "RelativeToolTip": "HRMS\\Controllers\\HolidayController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-20T19:39:09.549Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "HRMS\\Controllers\\EmployeeController.cs",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "HRMS\\Controllers\\EmployeeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-20T19:39:09.554Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "HRMS\\Controllers\\DashboardController.cs",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "HRMS\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-20T19:39:09.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DesignationController.cs",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\DesignationController.cs",
+              "RelativeDocumentMoniker": "HRMS\\Controllers\\DesignationController.cs",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\DesignationController.cs",
+              "RelativeToolTip": "HRMS\\Controllers\\DesignationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-20T19:39:09.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "HRMS\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "HRMS\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-20T19:39:09.567Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Views\\Attendance\\Index.cshtml",
+              "RelativeDocumentMoniker": "HRMS\\Views\\Attendance\\Index.cshtml",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Views\\Attendance\\Index.cshtml",
+              "RelativeToolTip": "HRMS\\Views\\Attendance\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-20T19:39:09.571Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "HRMS\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "HRMS\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-20T19:39:09.576Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Views\\Employee\\Create.cshtml",
+              "RelativeDocumentMoniker": "HRMS\\Views\\Employee\\Create.cshtml",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Views\\Employee\\Create.cshtml",
+              "RelativeToolTip": "HRMS\\Views\\Employee\\Create.cshtml",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAFkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-20T19:39:09.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "HRMS\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "HRMS\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-06-20T19:39:09.585Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "HRMS\\Models\\Employee.cs",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Models\\Employee.cs",
+              "RelativeToolTip": "HRMS\\Models\\Employee.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA6wCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-20T19:39:09.59Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Models\\User.cs",
+              "RelativeDocumentMoniker": "HRMS\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\MTC-DEVELOPER\\Downloads\\HRMS\\HRMS\\HRMS\\Models\\User.cs",
+              "RelativeToolTip": "HRMS\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-20T19:39:09.595Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

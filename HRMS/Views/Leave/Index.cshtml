@@ -1,0 +1,221 @@
+﻿@model IEnumerable<HRMS.Models.LeaveRequest>
+
+<h2>Leave Requests</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">
+        Apply Leave
+    </a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Employee</th>
+            <th>Leave Type</th>
+            <th>From Date</th>
+            <th>To Date</th>
+            <th>No Of Days</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Employee?.FullName</td>
+                <td>@item.LeaveType?.LeaveName</td>
+                <td>@item.FromDate?.ToString("dd-MM-yyyy")</td>
+                <td>@item.ToDate?.ToString("dd-MM-yyyy")</td>
+                <td>@item.NoOfDays</td>
+                <td>@item.Status</td>
+
+                <td>
+
+                    <a asp-action="Details"
+                       asp-route-id="@item.LeaveRequestId"
+                       class="btn btn-info btn-sm">
+                        Details
+                    </a>
+
+                  @*   @if (User.IsInRole("HR") || User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Edit"
+                           asp-route-id="@item.LeaveRequestId"
+                           class="btn btn-warning btn-sm">
+                            Edit
+                        </a>
+
+                        <form asp-action="Approve"
+                              asp-route-id="@item.LeaveRequestId"
+                              method="post"
+                              class="d-inline">
+                            @Html.AntiForgeryToken()
+                            <button type="submit"
+                                    class="btn btn-success btn-sm">
+                                Approve
+                            </button>
+                        </form>
+
+                        <form asp-action="Reject"
+                              asp-route-id="@item.LeaveRequestId"
+                              method="post"
+                              class="d-inline">
+                            @Html.AntiForgeryToken()
+                            <button type="submit"
+                                    class="btn btn-secondary btn-sm">
+                                Reject
+                            </button>
+                        </form>
+                    } *@
+
+
+
+                    @if ((User.IsInRole("HR") || User.IsInRole("Admin")) && item.Status == "Pending")
+                    {
+                        <a asp-action="Edit"
+                           asp-route-id="@item.LeaveRequestId"
+                           class="btn btn-warning btn-sm">
+                            Edit
+                        </a>
+
+                        <form asp-action="Approve"
+                              asp-route-id="@item.LeaveRequestId"
+                              method="post"
+                              class="d-inline">
+                            @Html.AntiForgeryToken()
+                            <button type="submit"
+                                    class="btn btn-success btn-sm">
+                                Approve
+                            </button>
+                        </form>
+
+                        <form asp-action="Reject"
+                              asp-route-id="@item.LeaveRequestId"
+                              method="post"
+                              class="d-inline">
+                            @Html.AntiForgeryToken()
+                            <button type="submit"
+                                    class="btn btn-secondary btn-sm">
+                                Reject
+                            </button>
+                        </form>
+                    }
+                    else if (User.IsInRole("HR") || User.IsInRole("Admin"))
+                    {
+                        <span class="badge bg-success">
+                            Action Completed
+                        </span>
+                    }
+
+
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Delete"
+                           asp-route-id="@item.LeaveRequestId"
+                           class="btn btn-danger btn-sm">
+                            Delete
+                        </a>
+                    }
+
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+@* @model IEnumerable<HRMS.Models.LeaveRequest>
+
+<h2>Leave Requests</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">
+        Apply Leave
+    </a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Employee</th>
+            <th>Leave Type</th>
+            <th>From Date</th>
+            <th>To Date</th>
+            <th>Days</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Employee?.FullName</td>
+                <td>@item.LeaveType?.LeaveName</td>
+                <td>@item.FromDate.ToShortDateString()</td>
+                <td>@item.ToDate.ToShortDateString()</td>
+                <td>@item.NoOfDays</td>
+                <td>@item.Status</td>
+
+                <td>
+
+                    <a asp-action="Details"
+                       asp-route-id="@item.LeaveRequestId"
+                       class="btn btn-info">
+                        Details
+                    </a>
+
+                    <a asp-action="Edit"
+                       asp-route-id="@item.LeaveRequestId"
+                       class="btn btn-warning">
+                        Edit
+                    </a>
+
+                    @if (User.IsInRole("HR") || User.IsInRole("Admin"))
+                    {
+                        <form asp-action="Approve"
+                              asp-route-id="@item.LeaveRequestId"
+                              method="post"
+                              class="d-inline">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-success">Approve</button>
+                        </form>
+
+                        <form asp-action="Reject"
+                              asp-route-id="@item.LeaveRequestId"
+                              method="post"
+                              class="d-inline">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-secondary">Reject</button>
+                        </form>
+                    }
+
+                    <a asp-action="Delete"
+                       asp-route-id="@item.LeaveRequestId"
+                       class="btn btn-danger">
+                        Delete
+                    </a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table> *@
+

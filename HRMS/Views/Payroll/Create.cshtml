@@ -1,0 +1,50 @@
+﻿@model HRMS.Models.Payroll
+
+<h2>Generate Payroll</h2>
+
+<form asp-action="Create" method="post">
+
+    <div class="mb-3">
+        <label class="form-label">Employee</label>
+        <select asp-for="EmployeeId"
+                asp-items="ViewBag.Employees"
+                class="form-control">
+            <option value="">-- Select Employee --</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Basic Salary</label>
+        <input asp-for="BasicSalary"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">HRA</label>
+        <input asp-for="HRA"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">DA / Allowances</label>
+        <input asp-for="DA"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Payroll Month</label>
+        <input asp-for="PayMonth"
+               type="month"
+               class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        Generate Payroll
+    </button>
+
+    <a asp-action="Index"
+       class="btn btn-secondary">
+        Back
+    </a>
+
+</form>

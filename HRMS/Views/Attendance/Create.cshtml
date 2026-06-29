@@ -1,0 +1,57 @@
+﻿@model HRMS.Models.Attendance
+
+<h2>Create Attendance</h2>
+
+<form asp-action="Create" method="post">
+
+    <div class="mb-3">
+        <label>Employee</label>
+
+        <select asp-for="EmployeeId"
+                asp-items="ViewBag.Employees"
+                class="form-control">
+            <option value="">--Select Employee--</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Attendance Date</label>
+
+        <input asp-for="AttendanceDate"
+               type="date"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Punch In</label>
+
+        <input asp-for="PunchIn"
+               type="datetime-local"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Punch Out</label>
+
+        <input asp-for="PunchOut"
+               type="datetime-local"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Status</label>
+
+        <select asp-for="Status"
+                class="form-control">
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+            <option value="Leave">Leave</option>
+        </select>
+    </div>
+
+    <button type="submit"
+            class="btn btn-success">
+        Save
+    </button>
+
+</form>

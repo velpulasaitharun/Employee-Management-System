@@ -1,0 +1,78 @@
+﻿@model IEnumerable<HRMS.Models.Payroll>
+
+<h2>Payroll List</h2>
+
+@if (User.IsInRole("Admin") || User.IsInRole("HR"))
+{
+    <p>
+        <a asp-action="Create"
+           class="btn btn-success">
+            Generate Payroll
+        </a>
+    </p>
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Employee</th>
+            <th>Month</th>
+            <th>Basic</th>
+            <th>HRA</th>
+            <th>DA</th>
+            <th>PF</th>
+            <th>ProfessionalTax</th>
+            <th>Gross Salary</th>
+            <th>Net Salary</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Employee?.FirstName @item.Employee?.LastName</td>
+                <td>@item.PayMonth.ToString("MMMM yyyy")</td>
+                <td>@item.BasicSalary</td>
+                <td>@item.HRA</td>
+                <td>@item.DA</td>
+                <td>@item.PF</td>
+                <td>@item.ProfessionalTax</td>
+                <td>@item.GrossSalary</td>
+                <td>@item.NetSalary</td>
+
+
+
+                <td>
+                    <a asp-action="Details"
+                       asp-route-id="@item.PayrollId"
+                       class="btn btn-info btn-sm">
+                        Details
+                    </a>
+
+                    <a asp-action="Payslip"
+                       asp-route-id="@item.PayrollId"
+                       class="btn btn-primary btn-sm">
+                        Payslip
+                    </a>
+
+                    @if (User.IsInRole("Admin") || User.IsInRole("HR"))
+                    {
+                        <a asp-action="Edit"
+                           asp-route-id="@item.PayrollId"
+                           class="btn btn-warning btn-sm">
+                            Edit
+                        </a>
+
+                        <a asp-action="Delete"
+                           asp-route-id="@item.PayrollId"
+                           class="btn btn-danger btn-sm">
+                            Delete
+                        </a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

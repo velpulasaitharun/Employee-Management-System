@@ -1,0 +1,53 @@
+﻿@model HRMS.Models.Payroll
+
+<h2>Payroll Details</h2>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Employee</th>
+        <td>@Model.Employee?.FirstName @Model.Employee?.LastName</td>
+    </tr>
+
+    <tr>
+        <th>Basic Salary</th>
+        <td>@Model.BasicSalary</td>
+    </tr>
+
+    <tr>
+        <th>HRA</th>
+        <td>@Model.HRA</td>
+    </tr>
+
+    <tr>
+        <th>DA</th>
+        <td>@Model.DA</td>
+    </tr>
+
+    <tr>
+        <th>PF</th>
+        <td>@Model.PF</td>
+    </tr>
+
+    <tr>
+        <th>Tax</th>
+        <td>@Model.ProfessionalTax</td>
+    </tr>
+
+
+    <tr>
+        <th>Gross Salary</th>
+        <td>@Model.GrossSalary</td>
+    </tr>
+
+    <tr>
+        <th>Net Salary</th>
+        <td>@Model.NetSalary</td>
+    </tr>
+
+</table>
+
+<a asp-action="Index"
+   class="btn btn-secondary">
+    Back
+</a>

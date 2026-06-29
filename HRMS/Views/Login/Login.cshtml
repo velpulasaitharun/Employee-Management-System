@@ -1,0 +1,54 @@
+﻿@model HRMS.ViewModels.Auth.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1 class="auth-title">Sign In</h1>
+<p class="auth-subtitle">Access your HRMS dashboard and protected modules.</p>
+
+<form asp-action="Login" method="post">
+    @Html.AntiForgeryToken()
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+    <div class="mb-3">
+        <label asp-for="UserName" class="form-label"></label>
+        <input asp-for="UserName"
+               class="form-control" />
+        <span asp-validation-for="UserName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Password" class="form-label"></label>
+        <input asp-for="Password"
+               type="password"
+               class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-auth text-white w-100">Login</button>
+
+    <div class="auth-links">
+        <a asp-action="Register">Create account</a>
+        <a asp-action="ForgotPassword">Forgot password?</a>
+    </div>
+
+</form>
+
+@* @if (TempData["Success"] is string success)
+{
+    <div class="alert alert-success mt-3" role="alert">
+        @success
+    </div>
+} *@
+
+@if (TempData["Info"] is string info)
+{
+    <div class="alert alert-info mt-3" role="alert">
+        @info
+    </div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

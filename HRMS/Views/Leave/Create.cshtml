@@ -1,0 +1,135 @@
+﻿
+@model HRMS.Models.LeaveRequest
+
+<h2>Apply Leave</h2>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.Message
+    </div>
+}
+
+<form asp-action="Create" method="post">
+
+   @*  @if (User.IsInRole("Admin") || User.IsInRole("HR"))
+    {
+        <div class="mb-3">
+            <label class="form-label">Employee</label>
+
+            <select asp-for="EmployeeId"
+                    asp-items="ViewBag.Employees"
+                    class="form-control">
+                <option value="">--Select Employee--</option>
+            </select>
+        </div>
+    }
+    else
+    {
+        <div class="mb-3">
+            <label class="form-label">Employee</label>
+
+            <input type="text"
+                   class="form-control"
+                   value="@ViewBag.EmployeeName"
+                   readonly />
+
+            <input type="hidden" asp-for="EmployeeId" />
+        </div>
+    } *@
+
+    <div class="mb-3">
+        <label class="form-label">Employee</label>
+
+        <input type="text"
+               class="form-control"
+               value="@ViewBag.EmployeeName"
+               readonly />
+
+        <input type="hidden"
+               asp-for="EmployeeId" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Leave Type</label>
+
+        <select asp-for="LeaveTypeId"
+                asp-items="ViewBag.LeaveTypes"
+                class="form-control">
+            <option value="">--Select Leave Type--</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="FromDate" class="form-label">
+            From Date
+        </label>
+
+        <input asp-for="FromDate"
+               type="date"
+               class="form-control"
+               placeholder="dd-mm-yyyy" />
+
+        <span asp-validation-for="FromDate"
+              class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ToDate" class="form-label">
+            To Date
+        </label>
+
+        <input asp-for="ToDate"
+               type="date"
+               class="form-control"
+               placeholder="dd-mm-yyyy" />
+
+        <span asp-validation-for="ToDate"
+              class="text-danger"></span>
+    </div>
+
+
+    @* <div class="mb-3">
+        <label for="FromDate" class="form-label">
+            From Date
+        </label>
+
+        <input type="date"
+               id="FromDate"
+               name="FromDate"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label for="ToDate" class="form-label">
+            To Date
+        </label>
+
+        <input type="date"
+               id="ToDate"
+               name="ToDate"
+               class="form-control" />
+    </div> *@
+
+    <div class="mb-3">
+        <label class="form-label">Reason</label>
+
+        <textarea asp-for="Reason"
+                  class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Status</label>
+
+        <input type="text"
+               class="form-control"
+               value="Pending"
+               readonly />
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        Apply Leave
+    </button>
+
+</form>
+

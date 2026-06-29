@@ -1,0 +1,37 @@
+﻿@model HRMS.Models.Holiday
+
+<h2>Holiday Details</h2>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Holiday Name</th>
+        <td>@Model.HolidayName</td>
+    </tr>
+
+    <tr>
+        <th>Holiday Date</th>
+        <td>@Model.HolidayDate.ToShortDateString()</td>
+    </tr>
+
+    <tr>
+        <th>Description</th>
+        <td>@Model.Description</td>
+    </tr>
+
+    <tr>
+        <th>Optional Holiday</th>
+        <td>@(Model.IsOptional ? "Yes" : "No")</td>
+    </tr>
+
+    <tr>
+        <th>Created Date</th>
+        <td>@Model.CreatedDate.ToShortDateString()</td>
+    </tr>
+
+</table>
+
+<a asp-action="Index"
+   class="btn btn-secondary">
+    Back
+</a>

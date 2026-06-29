@@ -1,0 +1,24 @@
+﻿@model HRMS.Models.Designation
+
+<h2>Designation Details</h2>
+
+<div class="card">
+    <div class="card-body">
+
+        <h4>
+            ID :
+            @Model.DesignationId
+        </h4>
+
+        <h4>
+            Name :
+            @Model.DesignationName
+        </h4>
+
+    </div>
+</div>
+
+<a asp-action="Index"
+   class="btn btn-secondary">
+    Back
+</a>

@@ -1,0 +1,25 @@
+.navbar {
+    padding: 12px 20px;
+}
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.nav-link {
+    font-size: 15px;
+    margin-right: 8px;
+}
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+}
+
+body {
+    background-color: #f4f6f9;
+}
+
+.container {
+    max-width: 95%;
+}

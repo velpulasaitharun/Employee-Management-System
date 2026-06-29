@@ -1,0 +1,42 @@
+﻿@model HRMS.Models.Attendance
+
+<h2>Attendance Details</h2>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Employee</th>
+        <td>@Model.Employee?.FullName</td>
+    </tr>
+
+    <tr>
+        <th>Date</th>
+        <td>@Model.AttendanceDate.ToShortDateString()</td>
+    </tr>
+
+    <tr>
+        <th>Punch In</th>
+        <td>@Model.PunchIn</td>
+    </tr>
+
+    <tr>
+        <th>Punch Out</th>
+        <td>@Model.PunchOut</td>
+    </tr>
+
+    <tr>
+        <th>Total Hours</th>
+        <td>@Model.TotalHours</td>
+    </tr>
+
+    <tr>
+        <th>Status</th>
+        <td>@Model.Status</td>
+    </tr>
+
+</table>
+
+<a asp-action="Index"
+   class="btn btn-secondary">
+    Back
+</a>

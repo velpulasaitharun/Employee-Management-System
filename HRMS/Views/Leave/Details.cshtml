@@ -1,0 +1,40 @@
+﻿@model HRMS.Models.LeaveRequest
+
+<h2>Leave Details</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Employee</th>
+        <td>@Model.Employee?.FullName</td>
+    </tr>
+
+    <tr>
+        <th>Leave Type</th>
+        <td>@Model.LeaveType?.LeaveName</td>
+    </tr>
+
+    <tr>
+        <th>From Date</th>
+        <td>@Model.FromDate?.ToShortDateString()</td>
+    </tr>
+
+    <tr>
+        <th>To Date</th>
+        <td>@Model.ToDate?.ToShortDateString()</td>
+    </tr>
+
+    <tr>
+        <th>No Of Days</th>
+        <td>@Model.NoOfDays</td>
+    </tr>
+
+    <tr>
+        <th>Reason</th>
+        <td>@Model.Reason</td>
+    </tr>
+
+    <tr>
+        <th>Status</th>
+        <td>@Model.Status</td>
+    </tr>
+</table>

@@ -1,0 +1,97 @@
+﻿@model HRMS.Models.Attendance
+
+<h2>Edit Attendance</h2>
+
+<form asp-action="Edit" method="post">
+
+ 
+    <input type="hidden" asp-for="AttendanceId" />
+
+    <div class="mb-3">
+        <label class="form-label">Employee</label>
+
+        <select asp-for="EmployeeId"
+                asp-items="ViewBag.Employees"
+                class="form-control">
+        </select>
+
+        <span asp-validation-for="EmployeeId"
+              class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Attendance Date</label>
+
+        <input asp-for="AttendanceDate"
+               type="date"
+               class="form-control" />
+
+        <span asp-validation-for="AttendanceDate"
+              class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Punch In</label>
+
+        <input asp-for="PunchIn"
+               type="datetime-local"
+               class="form-control" />
+
+        <span asp-validation-for="PunchIn"
+              class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Punch Out</label>
+
+        <input asp-for="PunchOut"
+               type="datetime-local"
+               class="form-control" />
+
+        <span asp-validation-for="PunchOut"
+              class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Status</label>
+
+        <select asp-for="Status"
+                class="form-control">
+
+            <option value="Present">Present</option>
+
+            <option value="Absent">Absent</option>
+
+            <option value="Leave">Leave</option>
+
+            <option value="Half Day">Half Day</option>
+
+            <option value="Work From Home">Work From Home</option>
+
+            <option value="Missed Punch Out">Missed Punch Out</option>
+
+        </select>
+
+        <span asp-validation-for="Status"
+              class="text-danger"></span>
+    </div>
+
+    <button type="submit"
+            class="btn btn-primary">
+        Update
+    </button>
+
+    <a asp-action="Index"
+       class="btn btn-secondary">
+        Cancel
+    </a>
+
+
+</form>
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

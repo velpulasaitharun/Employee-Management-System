@@ -1,0 +1,22 @@
+﻿@model HRMS.Models.Department
+
+<h2>Department Details</h2>
+
+<div class="card">
+    <div class="card-body">
+
+        <h4>ID : @Model.DepartmentId</h4>
+
+        <h4>Name : @Model.DepartmentName</h4>
+
+        <h4>Description : @Model.Description</h4>
+
+    </div>
+</div>
+
+<br />
+
+<a asp-action="Index"
+   class="btn btn-secondary">
+    Back
+</a>

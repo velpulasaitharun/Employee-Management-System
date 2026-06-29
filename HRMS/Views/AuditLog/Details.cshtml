@@ -1,0 +1,37 @@
+﻿@model HRMS.Models.AuditLog
+
+<h2>Audit Log Details</h2>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>User Name</th>
+        <td>@Model.UserName</td>
+    </tr>
+
+    <tr>
+        <th>Action Type</th>
+        <td>@Model.ActionType</td>
+    </tr>
+
+    <tr>
+        <th>Module Name</th>
+        <td>@Model.ModuleName</td>
+    </tr>
+
+    <tr>
+        <th>Description</th>
+        <td>@Model.Description</td>
+    </tr>
+
+    <tr>
+        <th>Action Date</th>
+        <td>@Model.ActionDate</td>
+    </tr>
+
+</table>
+
+<a asp-action="Index"
+   class="btn btn-secondary">
+    Back
+</a>

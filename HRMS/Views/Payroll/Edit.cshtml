@@ -1,0 +1,45 @@
+﻿@model HRMS.Models.Payroll
+
+<h2>Edit Payroll</h2>
+
+<form asp-action="Edit">
+
+    <input type="hidden"
+           asp-for="PayrollId" />
+
+    <div class="mb-3">
+        <label>Employee</label>
+        <select asp-for="EmployeeId"
+                asp-items="ViewBag.Employees"
+                class="form-control">
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Basic Salary</label>
+        <input asp-for="BasicSalary"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>HRA</label>
+        <input asp-for="HRA"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>DA</label>
+        <input asp-for="DA"
+               class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Month</label>
+        <input asp-for="PayMonth"
+               class="form-control" />
+
+    </div>
+    <button class="btn btn-primary">
+        Update
+    </button>
+
+</form>

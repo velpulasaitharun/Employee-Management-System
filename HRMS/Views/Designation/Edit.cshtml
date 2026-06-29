@@ -1,0 +1,30 @@
+﻿@model HRMS.Models.Designation
+
+<h2>Edit Designation</h2>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden"
+           asp-for="DesignationId" />
+
+    <div class="mb-3">
+        <label asp-for="DesignationName"></label>
+
+        <input asp-for="DesignationName"
+               class="form-control" />
+
+        <span asp-validation-for="DesignationName"
+              class="text-danger"></span>
+    </div>
+
+    <button type="submit"
+            class="btn btn-primary">
+        Update
+    </button>
+
+    <a asp-action="Index"
+       class="btn btn-secondary">
+        Back
+    </a>
+
+</form>

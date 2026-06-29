@@ -1,0 +1,137 @@
+﻿@model HRMS.Models.Employee
+
+<h2>Create Employee</h2>
+
+<form asp-action="Create" method="post">
+
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <!-- Personal Information -->
+
+    <div class="mb-3">
+        <label asp-for="FirstName" class="form-label">First Name</label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="LastName" class="form-label">Last Name</label>
+        <input asp-for="LastName"  class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DOB" class="form-label">Date Of Birth</label>
+        <input asp-for="DOB" type="date" class="form-control" />
+        <span asp-validation-for="DOB" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label fw-bold">Gender</label>
+
+        <div class="form-check">
+            <input asp-for="Gender"
+                   type="radio"
+                   value="Male"
+                   class="form-check-input" />
+            <label class="form-check-label">Male</label>
+        </div>
+
+        <div class="form-check">
+            <input asp-for="Gender"
+                   type="radio"
+                   value="Female"
+                   class="form-check-input" />
+            <label class="form-check-label">Female</label>
+        </div>
+
+        <div class="form-check">
+            <input asp-for="Gender"
+                   type="radio"
+                   value="Other"
+                   class="form-check-input" />
+            <label class="form-check-label">Other</label>
+        </div>
+
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+
+    <!-- Contact Information -->
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label">Email</label>
+        <input asp-for="Email"  class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="PhoneNo" class="form-label">Phone Number</label>
+        <input asp-for="PhoneNo"
+               type="number"
+               maxlength="10"
+               class="form-control" />
+        <span asp-validation-for="PhoneNo" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Address" class="form-label">Address</label>
+        <textarea asp-for="Address"
+                  rows="3"
+                  class="form-control"></textarea>
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <!-- Employment Information -->
+
+    <div class="mb-3">
+        <label asp-for="DepartmentId" class="form-label">Department</label>
+        <select asp-for="DepartmentId"
+                asp-items="ViewBag.Departments"
+                class="form-control">
+            <option value="">-- Select Department --</option>
+        </select>
+        <span asp-validation-for="DepartmentId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DesignationId" class="form-label">Designation</label>
+        <select asp-for="DesignationId"
+                asp-items="ViewBag.Designations"
+                class="form-control">
+            <option value="">-- Select Designation --</option>
+        </select>
+        <span asp-validation-for="DesignationId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="JoiningDate" class="form-label">Joining Date</label>
+        <input asp-for="JoiningDate"
+               type="date"
+               class="form-control" />
+        <span asp-validation-for="JoiningDate" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Salary" class="form-label">Salary</label>
+        <input asp-for="Salary" class="form-control" />
+        <span asp-validation-for="Salary" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        Save Employee
+    </button>
+
+    <a asp-action="Index" class="btn btn-secondary">
+        Back
+    </a>
+
+
+</form>
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

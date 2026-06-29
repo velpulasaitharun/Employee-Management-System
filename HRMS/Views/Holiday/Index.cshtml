@@ -1,0 +1,56 @@
+﻿@model IEnumerable<HRMS.Models.Holiday>
+
+<h2>Holiday List</h2>
+
+<p>
+    <a asp-action="Create"
+       class="btn btn-success">
+        Add Holiday
+    </a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Holiday Name</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Optional</th>
+            <th>Created Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.HolidayName</td>
+                <td>@item.HolidayDate.ToShortDateString()</td>
+                <td>@item.Description</td>
+                <td>@(item.IsOptional ? "Yes" : "No")</td>
+                <td>@item.CreatedDate.ToShortDateString()</td>
+
+                <td>
+                    <a asp-action="Details"
+                       asp-route-id="@item.HolidayId"
+                       class="btn btn-info">
+                        Details
+                    </a>
+
+                    <a asp-action="Edit"
+                       asp-route-id="@item.HolidayId"
+                       class="btn btn-warning">
+                        Edit
+                    </a>
+
+                    <a asp-action="Delete"
+                       asp-route-id="@item.HolidayId"
+                       class="btn btn-danger">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

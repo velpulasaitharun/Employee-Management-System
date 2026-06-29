@@ -1,0 +1,37 @@
+﻿@model HRMS.Models.Holiday
+
+<h2>Edit Holiday</h2>
+
+<form asp-action="Create">
+
+    <div class="mb-3">
+        <label>Holiday Name</label>
+        <input asp-for="HolidayName"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Holiday Date</label>
+        <input asp-for="HolidayDate"
+               type="date"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Description</label>
+        <textarea asp-for="Description"
+                  class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label>
+            <input asp-for="IsOptional" />
+            Optional Holiday
+        </label>
+    </div>
+
+    <button class="btn btn-success">
+        Update
+    </button>
+
+</form>

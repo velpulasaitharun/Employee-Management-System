@@ -1,0 +1,53 @@
+﻿@model IEnumerable<HRMS.Models.Designation>
+
+@{
+    ViewData["Title"] = "Designation List";
+}
+
+<h2>Designation List</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">
+        Add Designation
+    </a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Designation Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DesignationId</td>
+                <td>@item.DesignationName</td>
+
+                <td>
+                    <a asp-action="Edit"
+                       asp-route-id="@item.DesignationId"
+                       class="btn btn-warning">
+                        Edit
+                    </a>
+
+                    <a asp-action="Details"
+                       asp-route-id="@item.DesignationId"
+                       class="btn btn-info">
+                        Details
+                    </a>
+
+                    <a asp-action="Delete"
+                       asp-route-id="@item.DesignationId"
+                       class="btn btn-danger">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

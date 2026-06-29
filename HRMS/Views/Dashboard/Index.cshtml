@@ -1,0 +1,687 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container-fluid">
+
+    <div class="dashboard-header">
+        <h2>HRMS Dashboard</h2>
+        <p>Workforce Analytics & Employee Management System</p>
+    </div>
+
+    @if (User.IsInRole("Admin") || User.IsInRole("HR"))
+    {
+        <!-- KPI CARDS -->
+        <div class="row">
+
+            <div class="col-md-4 mb-4">
+                <div class="card kpi-card bg-blue">
+                    <div class="card-body">
+                        <div class="kpi-title">Total Employees</div>
+                        <div class="kpi-value">@ViewBag.TotalEmployees</div>
+                        <div class="kpi-icon">👨‍💼</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card kpi-card bg-green">
+                    <div class="card-body">
+                        <div class="kpi-title">Departments</div>
+                        <div class="kpi-value">@ViewBag.TotalDepartments</div>
+                        <div class="kpi-icon">🏢</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card kpi-card bg-purple">
+                    <div class="card-body">
+                        <div class="kpi-title">Designations</div>
+                        <div class="kpi-value">@ViewBag.TotalDesignations</div>
+                        <div class="kpi-icon">🎯</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card kpi-card bg-orange">
+                    <div class="card-body">
+                        <div class="kpi-title">Leave Requests</div>
+                        <div class="kpi-value">@ViewBag.TotalLeaves</div>
+                        <div class="kpi-icon">📅</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card kpi-card bg-red">
+                    <div class="card-body">
+                        <div class="kpi-title">Payroll Records</div>
+                        <div class="kpi-value">@ViewBag.TotalPayrolls</div>
+                        <div class="kpi-icon">💰</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- OVERVIEW SECTION -->
+        <div class="row">
+
+            <div class="col-md-6 mb-4">
+                <div class="quick-card">
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <h4>Administration Overview</h4>
+                        <hr />
+                        <p>✔ User & Role Management</p>
+                        <p>✔ Employee Management</p>
+                        <p>✔ Attendance Monitoring</p>
+                        <p>✔ Leave Approvals</p>
+                        <p>✔ Payroll Management</p>
+                        <p>✔ Audit Tracking</p>
+                    }
+                    else if (User.IsInRole("HR"))
+                    {
+                        <h4>HR Operations Overview</h4>
+                        <hr />
+                        <p>✔ Employee Records</p>
+                        <p>✔ Attendance Tracking</p>
+                        <p>✔ Leave Management</p>
+                        <p>✔ Payroll Processing</p>
+                    }
+
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="quick-card">
+                    <h4>System Status</h4>
+                    <hr />
+
+                    <div class="row text-center">
+
+                        <div class="col-4">
+                            <h3>@ViewBag.TotalEmployees</h3>
+                            <small>Employees</small>
+                        </div>
+
+                        <div class="col-4">
+                            <h3>@ViewBag.TotalLeaves</h3>
+                            <small>Leaves</small>
+                        </div>
+
+                        <div class="col-4">
+                            <h3>@ViewBag.TotalPayrolls</h3>
+                            <small>Payrolls</small>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    }
+    else
+    {
+        <div class="row">
+
+            <div class="col-md-3 mb-4">
+                <div class="card kpi-card bg-blue">
+                    <div class="card-body">
+                        <div class="kpi-title">Attendance</div>
+                        <div class="kpi-value">@ViewBag.MyAttendance</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card kpi-card bg-green">
+                    <div class="card-body">
+                        <div class="kpi-title">My Leaves</div>
+                        <div class="kpi-value">@ViewBag.MyLeaves</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card kpi-card bg-orange">
+                    <div class="card-body">
+                        <div class="kpi-title">Pending Leaves</div>
+                        <div class="kpi-value">@ViewBag.PendingLeaves</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card kpi-card bg-red">
+                    <div class="card-body">
+                        <div class="kpi-title">My Payrolls</div>
+                        <div class="kpi-value">@ViewBag.MyPayrolls</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+
+</div>
+
+
+
+
+
+@* @{
+    ViewData["Title"] = "Dashboard";
+}
+
+<style>
+
+    body {
+        background: #f4f7fc;
+    }
+
+    .dashboard-header {
+        background: linear-gradient(135deg,#0f172a,#2563eb);
+        color: white;
+        padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 25px;
+    }
+
+        .dashboard-header h2 {
+            /* font-weight: 700; */
+            font-size: 24px;
+        }
+
+        .dashboard-header p {
+            /* margin-bottom: 0;
+            opacity: .9; */
+            font-size: 14px;
+        }
+
+    .kpi-card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: .3s;
+        box-shadow: 0 8px 20px rgba(0,0,0,.08);
+    }
+
+        .kpi-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .kpi-card .card-body {
+            padding: 15px;
+        }
+
+    .kpi-icon {
+        font-size: 40px;
+        float: right;
+        opacity: .3;
+    }
+
+    .kpi-title {
+        font-size: 12px;
+        color: #64748b;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .kpi-value {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .bg-blue {
+        background: linear-gradient(135deg,#2563eb,#1d4ed8);
+        color: white;
+    }
+
+    .bg-green {
+        background: linear-gradient(135deg,#10b981,#059669);
+        color: white;
+    }
+
+    .bg-purple {
+        background: linear-gradient(135deg,#8b5cf6,#7c3aed);
+        color: white;
+    }
+
+    .bg-orange {
+        background: linear-gradient(135deg,#f59e0b,#d97706);
+        color: white;
+    }
+
+    .bg-red {
+        background: linear-gradient(135deg,#ef4444,#dc2626);
+        color: white;
+    }
+
+    .bg-cyan {
+        background: linear-gradient(135deg,#06b6d4,#0891b2);
+        color: white;
+    }
+
+    .quick-card {
+        background: white;
+        border-radius: 15px;
+        padding: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,.08);
+        height: 100%;
+    }
+
+</style>
+
+<div class="container-fluid">
+
+    <div class="dashboard-header">
+        <h2>HRMS Dashboard</h2>
+        <p>Workforce Analytics & Employee Management System</p>
+    </div>
+
+    @if (User.IsInRole("Admin") || User.IsInRole("HR"))
+    {
+        <div class="row">
+
+            <div class="col-md-4 mb-4">
+                <div class="card kpi-card bg-blue">
+                    <div class="card-body">
+                        <div class="kpi-title">Total Employees</div>
+                        <div class="kpi-value">@ViewBag.TotalEmployees</div>
+                        <div class="kpi-icon">👨‍💼</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card kpi-card bg-green">
+                    <div class="card-body">
+                        <div class="kpi-title">Departments</div>
+                        <div class="kpi-value">@ViewBag.TotalDepartments</div>
+                        <div class="kpi-icon">🏢</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card kpi-card bg-purple">
+                    <div class="card-body">
+                        <div class="kpi-title">Designations</div>
+                        <div class="kpi-value">@ViewBag.TotalDesignations</div>
+                        <div class="kpi-icon">🎯</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card kpi-card bg-orange">
+                    <div class="card-body">
+                        <div class="kpi-title">Leave Requests</div>
+                        <div class="kpi-value">@ViewBag.TotalLeaves</div>
+                        <div class="kpi-icon">📅</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card kpi-card bg-red">
+                    <div class="card-body">
+                        <div class="kpi-title">Payroll Records</div>
+                        <div class="kpi-value">@ViewBag.TotalPayrolls</div>
+                        <div class="kpi-icon">💰</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="quick-card">
+
+                @if (User.IsInRole("Admin"))
+                {
+                    <h4>Administration Overview</h4>
+                    <hr />
+                    <p>✔ User & Role Management</p>
+                    <p>✔ Employee Management</p>
+                    <p>✔ Attendance Monitoring</p>
+                    <p>✔ Leave Approvals</p>
+                    <p>✔ Payroll Management</p>
+                    <p>✔ Audit Tracking</p>
+                }
+                else if (User.IsInRole("HR"))
+                {
+                    <h4>HR Operations Overview</h4>
+                    <hr />
+                    <p>✔ Employee Records</p>
+                    <p>✔ Attendance Tracking</p>
+                    <p>✔ Leave Management</p>
+                    <p>✔ Payroll Processing</p>
+                }
+
+            </div>
+           @*/ 
+            
+            
+             <div class="col-md-6 mb-4">
+                <div class="quick-card">
+                    <h4>HR Overview</h4>
+                    <hr />
+                    <p>✔ Employee Management</p>
+                    <p>✔ Attendance Tracking</p>
+                    <p>✔ Leave Management</p>
+                    <p>✔ Payroll Processing</p>
+                </div>
+            </div>*/
+ 
+            <div class="col-md-6 mb-4">
+                <div class="quick-card">
+                    <h4>System Status</h4>
+                    <hr />
+                    <p>Employees : @ViewBag.TotalEmployees</p>
+                    <p>Leaves : @ViewBag.TotalLeaves</p>
+                    <p>Payrolls : @ViewBag.TotalPayrolls</p>
+                </div>
+            </div>
+
+        </div>
+    }
+    else
+    {
+        <div class="row">
+
+            <div class="col-md-3 mb-4">
+                <div class="card kpi-card bg-blue">
+                    <div class="card-body">
+                        <div class="kpi-title">Attendance</div>
+                        <div class="kpi-value">@ViewBag.MyAttendance</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card kpi-card bg-green">
+                    <div class="card-body">
+                        <div class="kpi-title">My Leaves</div>
+                        <div class="kpi-value">@ViewBag.MyLeaves</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card kpi-card bg-orange">
+                    <div class="card-body">
+                        <div class="kpi-title">Pending Leaves</div>
+                        <div class="kpi-value">@ViewBag.PendingLeaves</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card kpi-card bg-red">
+                    <div class="card-body">
+                        <div class="kpi-title">My Payrolls</div>
+                        <div class="kpi-value">@ViewBag.MyPayrolls</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+
+</div> *@
+
+
+
+
+
+
+@*{
+    ViewData["Title"] = "Dashboard";
+}
+
+<style>
+    .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .dashboard-header h2 {
+        margin: 0;
+        font-weight: 700;
+        letter-spacing: 0.25px;
+    }
+
+    .dashboard-subtitle {
+        color: #6b7280;
+        margin: 0;
+    }
+
+    .kpi-card {
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        background: linear-gradient(160deg, #ffffff, #f8fafc);
+        box-shadow: 0 12px 25px rgba(15, 23, 42, 0.06);
+        height: 100%;
+    }
+
+    .kpi-card .card-body {
+        padding: 1rem;
+    }
+
+    .kpi-label {
+        margin: 0;
+        color: #64748b;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+    }
+
+    .kpi-value {
+        margin: 0.35rem 0 0;
+        font-size: 1.9rem;
+        font-weight: 700;
+        color: #0f172a;
+    }
+
+    .kpi-accent {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        color: #fff;
+    }
+
+    .accent-employees { background: #1d4ed8; }
+    .accent-departments { background: #0f766e; }
+    .accent-designations { background: #7c3aed; }
+    .accent-leaves { background: #d97706; }
+    .accent-payroll { background: #be123c; }
+</style>
+
+<div class="container-fluid px-0">
+
+    <div class="dashboard-header">
+        <div>
+            <h2>HRMS Dashboard</h2>
+            <p class="dashboard-subtitle">Live overview of core workforce operations.</p>
+        </div>
+    </div>
+
+    @if (User.IsInRole("Admin") || User.IsInRole("HR"))
+    {
+        <div class="row">
+
+            <div class="col-md-4 mb-3">
+                <div class="card kpi-card">
+                    <div class="card-body">
+                        <p class="kpi-label">Total Employees</p>
+                        <h3 class="kpi-value">@ViewBag.TotalEmployees</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card kpi-card">
+                    <div class="card-body">
+                        <p class="kpi-label">Total Departments</p>
+                        <h3 class="kpi-value">@ViewBag.TotalDepartments</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card kpi-card">
+                    <div class="card-body">
+                        <p class="kpi-label">Total Designations</p>
+                        <h3 class="kpi-value">@ViewBag.TotalDesignations</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <div class="card kpi-card">
+                    <div class="card-body">
+                        <p class="kpi-label">Total Leave Requests</p>
+                        <h3 class="kpi-value">@ViewBag.TotalLeaves</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <div class="card kpi-card">
+                    <div class="card-body">
+                        <p class="kpi-label">Total Payroll Records</p>
+                        <h3 class="kpi-value">@ViewBag.TotalPayrolls</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+    else
+    {
+        <div class="row">
+
+            <div class="col-md-3 mb-3">
+                <div class="card kpi-card">
+                    <div class="card-body">
+                        <p class="kpi-label">My Attendance</p>
+                        <h3 class="kpi-value">@ViewBag.MyAttendance</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <div class="card kpi-card">
+                    <div class="card-body">
+                        <p class="kpi-label">My Leaves</p>
+                        <h3 class="kpi-value">@ViewBag.MyLeaves</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <div class="card kpi-card">
+                    <div class="card-body">
+                        <p class="kpi-label">Pending Leaves</p>
+                        <h3 class="kpi-value">@ViewBag.PendingLeaves</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <div class="card kpi-card">
+                    <div class="card-body">
+                        <p class="kpi-label">My Payrolls</p>
+                        <h3 class="kpi-value">@ViewBag.MyPayrolls</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+
+</div>
+
+    @* < div class="row">
+
+        <div class="col-12 col-md-6 col-xl-4 mb-3">
+            <div class="card kpi-card">
+                <div class="card-body d-flex justify-content-between align-items-start">
+                    <div>
+                        <p class="kpi-label">Total Employees</p>
+                        <h3 class="kpi-value">@ViewBag.TotalEmployees</h3>
+                    </div>
+                    <span class="kpi-accent accent-employees">E</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-4 mb-3">
+            <div class="card kpi-card">
+                <div class="card-body d-flex justify-content-between align-items-start">
+                    <div>
+                        <p class="kpi-label">Total Departments</p>
+                        <h3 class="kpi-value">@ViewBag.TotalDepartments</h3>
+                    </div>
+                    <span class="kpi-accent accent-departments">D</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-4 mb-3">
+            <div class="card kpi-card">
+                <div class="card-body d-flex justify-content-between align-items-start">
+                    <div>
+                        <p class="kpi-label">Total Designations</p>
+                        <h3 class="kpi-value">@ViewBag.TotalDesignations</h3>
+                    </div>
+                    <span class="kpi-accent accent-designations">T</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-12 col-md-6 mb-3">
+            <div class="card kpi-card">
+                <div class="card-body d-flex justify-content-between align-items-start">
+                    <div>
+                        <p class="kpi-label">Total Leave Requests</p>
+                        <h3 class="kpi-value">@ViewBag.TotalLeaves</h3>
+                    </div>
+                    <span class="kpi-accent accent-leaves">L</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 mb-3">
+            <div class="card kpi-card">
+                <div class="card-body d-flex justify-content-between align-items-start">
+                    <div>
+                        <p class="kpi-label">Total Payroll Records</p>
+                        <h3 class="kpi-value">@ViewBag.TotalPayrolls</h3>
+                    </div>
+                    <span class="kpi-accent accent-payroll">P</span>
+                </div> 
+            </div>
+        </div>
+
+    </div>
+ *@
+ 

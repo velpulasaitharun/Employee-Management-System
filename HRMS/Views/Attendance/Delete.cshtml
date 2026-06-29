@@ -1,0 +1,56 @@
+﻿@model HRMS.Models.Attendance
+
+<h2>Delete Attendance</h2>
+
+<h4>Are you sure you want to delete this record?</h4>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Employee</th>
+        <td>@Model.Employee?.FirstName</td>
+    </tr>
+
+    <tr>
+        <th>Date</th>
+        <td>@Model.AttendanceDate.ToShortDateString()</td>
+    </tr>
+
+    <tr>
+        <th>Punch In</th>
+        <td>@Model.PunchIn</td>
+    </tr>
+
+    <tr>
+        <th>Punch Out</th>
+        <td>@Model.PunchOut</td>
+    </tr>
+
+    <tr>
+        <th>Total Hours</th>
+        <td>@Model.TotalHours</td>
+    </tr>
+
+    <tr>
+        <th>Status</th>
+        <td>@Model.Status</td>
+    </tr>
+
+</table>
+
+<form asp-action="Delete" method="post">
+
+    <input type="hidden"
+           asp-for="AttendanceId" />
+
+    <button type="submit"
+            class="btn btn-danger">
+        Delete
+    </button>
+
+    <a asp-action="Index"
+       class="btn btn-secondary">
+        Cancel
+    </a>
+
+</form>

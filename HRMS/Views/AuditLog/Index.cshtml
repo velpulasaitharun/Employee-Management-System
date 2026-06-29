@@ -1,0 +1,35 @@
+﻿@model IEnumerable<HRMS.Models.AuditLog>
+
+<h2>Audit Logs</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Action</th>
+            <th>Module</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.UserName</td>
+                <td>@item.ActionType</td>
+                <td>@item.ModuleName</td>
+                <td>@item.ActionDate</td>
+
+                <td>
+                    <a asp-action="Details"
+                       asp-route-id="@item.AuditLogId"
+                       class="btn btn-info">
+                        Details
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

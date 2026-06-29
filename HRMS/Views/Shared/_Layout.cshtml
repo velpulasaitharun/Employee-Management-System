@@ -1,0 +1,333 @@
+﻿@using HRMS.Constants
+@using System.Security.Claims
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HRMS</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+    <style>
+        :root {
+            --app-bg-start: #eef2f8;
+            --app-bg-end: #f7f3ea;
+            --panel-bg: #0f1c2e;
+            --panel-bg-accent: #162946;
+            --panel-text: #d8e3f2;
+            --panel-active: #274a7d;
+            --topbar-bg: #ffffff;
+            --text-primary: #1f2937;
+            --text-muted: #6b7280;
+            --surface: #ffffff;
+            --surface-border: #e5e7eb;
+            --brand: #0c5a6e;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            color: var(--text-primary);
+            background: radial-gradient(circle at 10% 10%, rgba(12, 90, 110, 0.08), transparent 35%),
+                        radial-gradient(circle at 90% 0, rgba(39, 74, 125, 0.12), transparent 45%),
+                        linear-gradient(180deg, var(--app-bg-start), var(--app-bg-end));
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .app-shell {
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 260px;
+            background: linear-gradient(180deg, var(--panel-bg), var(--panel-bg-accent));
+            color: var(--panel-text);
+            padding: 1.25rem 1rem;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+
+        .brand {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-link-panel {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--panel-text);
+            padding: 0.65rem 0.8rem;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-bottom: 0.35rem;
+            transition: all 150ms ease;
+        }
+
+        .nav-link-panel:hover,
+        .nav-link-panel.active {
+            color: #fff;
+            background: var(--panel-active);
+        }
+
+        .main-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .topbar {
+            background: var(--topbar-bg);
+            border-bottom: 1px solid var(--surface-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.85rem 1.25rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .topbar-title {
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .topbar-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        .topbar-meta strong {
+            color: var(--text-primary);
+        }
+
+        .content {
+            flex: 1;
+            padding: 1.25rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 0.85rem 1rem;
+            background: var(--surface);
+            border-top: 1px solid var(--surface-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .content-panel {
+            background: var(--surface);
+            border: 1px solid var(--surface-border);
+            border-radius: 16px;
+            padding: 1.1rem;
+            box-shadow: 0 16px 30px rgba(31, 41, 55, 0.05);
+            min-height: 68vh;
+        }
+
+        @@media (max-width: 992px) {
+            .app-shell {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0.5rem;
+            }
+
+            .brand {
+                grid-column: 1 / -1;
+                margin-bottom: 0.25rem;
+            }
+        }
+
+        @@media (max-width: 576px) {
+            .topbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.35rem;
+            }
+
+            .sidebar {
+                grid-template-columns: 1fr;
+            }
+
+            .content {
+                padding: 0.85rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    @if (User.Identity?.IsAuthenticated == true)
+    {
+        var role = User.FindFirst(ClaimTypes.Role)?.Value ?? "Employee";
+        var employeeName = User.FindFirst(CustomClaimTypes.EmployeeName)?.Value ?? User.Identity?.Name ?? "User";
+
+        <div class="app-shell">
+            <aside class="sidebar">
+                <div class="brand">HRMS Portal</div>
+                <a class="nav-link-panel" asp-controller="Dashboard" asp-action="Index">
+                    <i class="bi bi-grid"></i>Dashboard
+                </a>
+
+                @if (role == "Admin")
+                {
+                    <a class="nav-link-panel" asp-controller="Department" asp-action="Index">
+                        <i class="bi bi-diagram-3"></i>Departments
+                    </a>
+
+                    <a class="nav-link-panel" asp-controller="Designation" asp-action="Index">
+                        <i class="bi bi-briefcase"></i>Designations
+                    </a>
+
+                    <a class="nav-link-panel" asp-controller="Employee" asp-action="Index">
+                        <i class="bi bi-people"></i>Employees
+                    </a>
+
+                    <a class="nav-link-panel"
+                       asp-controller="Attendance"
+                       asp-action="MyAttendance">
+                        <i class="bi bi-person-workspace"></i> My Attendance
+                    </a>
+
+                    <a class="nav-link-panel"
+                       asp-controller="Attendance"
+                       asp-action="Index">
+                        <i class="bi bi-building-fill-check"></i> Employees Attendance
+                    </a>
+                    
+                    @* <a class="nav-link-panel" asp-controller="Attendance" asp-action="Index">
+                        <i class="bi bi-clock-history"></i> My Attendance
+                    </a>
+
+                    <a class="nav-link-panel" asp-controller="Attendance" asp-action="Index">
+                        <i class="bi bi-clock-history"></i>Employees Attendance
+                    </a> *@
+
+                    <a class="nav-link-panel" asp-controller="Leave" asp-action="Index">
+                        <i class="bi bi-calendar-check"></i>Leave Management
+                    </a>
+
+                    <a class="nav-link-panel" asp-controller="Payroll" asp-action="Index">
+                        <i class="bi bi-cash-coin"></i>Payroll
+                    </a>
+
+                    <a class="nav-link-panel" asp-controller="AuditLog" asp-action="Index">
+                        <i class="bi bi-journal-text"></i>Audit Logs
+                    </a>
+                }
+                else if (role == "HR")
+                {
+                    <a class="nav-link-panel" asp-controller="Employee" asp-action="Index">
+                        <i class="bi bi-people"></i>Employees
+                    </a>
+
+                    <a class="nav-link-panel"
+                       asp-controller="Attendance"
+                       asp-action="MyAttendance">
+                        <i class="bi bi-person-workspace"></i> My Attendance
+                    </a>
+
+                    <a class="nav-link-panel"
+                       asp-controller="Attendance"
+                       asp-action="Index">
+                        <i class="bi bi-building-fill-check"></i> Employees Attendance
+                    </a>
+                    
+                    @*  <a class="nav-link-panel" asp-controller="Attendance" asp-action="Index">
+                        <i class="bi bi-clock-history"></i>My Attendance
+                    </a>
+
+                    <a class="nav-link-panel" asp-controller="Attendance" asp-action="Index">
+                        <i class="bi bi-clock-history"></i>Employees Attendance
+                    </a> *@
+
+                    <a class="nav-link-panel" asp-controller="Leave" asp-action="Index">
+                        <i class="bi bi-calendar-check"></i>Leave Management
+                    </a>
+
+                    <a class="nav-link-panel" asp-controller="Payroll" asp-action="Index">
+                        <i class="bi bi-cash-coin"></i>Payroll
+                    </a>
+                }
+                else
+                {
+                    <a class="nav-link-panel" asp-controller="Attendance" asp-action="Index">
+                        <i class="bi bi-person-workspace"></i>Attendance
+                    </a>
+
+                    <a class="nav-link-panel" asp-controller="Leave" asp-action="Index">
+                        <i class="bi bi-calendar-check"></i>Leave Management
+                    </a>
+                    <a class="nav-link-panel" asp-controller="Payroll" asp-action="Index">
+                        <i class="bi bi-cash-coin"></i>Pay Slip
+                    </a>
+                }
+            
+                @* 
+                <a class="nav-link-panel" asp-controller="Dashboard" asp-action="Index"><i class="bi bi-grid"></i>Dashboard</a>
+                <a class="nav-link-panel" asp-controller="Department" asp-action="Index"><i class="bi bi-diagram-3"></i>Departments</a>
+                <a class="nav-link-panel" asp-controller="Designation" asp-action="Index"><i class="bi bi-briefcase"></i>Designations</a>
+                <a class="nav-link-panel" asp-controller="Employee" asp-action="Index"><i class="bi bi-people"></i>Employees</a>
+                <a class="nav-link-panel" asp-controller="Attendance" asp-action="Index"><i class="bi bi-clock-history"></i>Attendance</a>
+                <a class="nav-link-panel" asp-controller="Leave" asp-action="Index"><i class="bi bi-calendar-check"></i>Leave Management</a>
+                <a class="nav-link-panel" asp-controller="Payroll" asp-action="Index"><i class="bi bi-cash-coin"></i>Payroll</a> 
+
+                @if (role == "Admin" || role == "HR")
+                {
+                    <a class="nav-link-panel" asp-controller="AuditLog" asp-action="Index"><i class="bi bi-journal-text"></i>Audit Logs</a>
+                } *@
+            </aside>
+
+            <div class="main-wrapper">
+                <header class="topbar">
+                    <h5 class="topbar-title">Employee Service Portal</h5>
+                    <div class="topbar-meta">
+                        <strong>@employeeName</strong>
+                        <span>|</span>
+                        <span>@role</span>
+                        <span>|</span>
+                        <a asp-controller="Login" asp-action="Logout" class="text-decoration-none">Logout</a>
+                    </div>
+                </header>
+
+                <main class="content">
+                    <section class="content-panel">
+                        @RenderBody()
+                    </section>
+                </main>
+
+                <footer class="footer">
+                    &copy; @DateTime.UtcNow.Year HRMS | Employee Self Service Portal
+                </footer>
+            </div>
+        </div>
+    }
+    else
+    {
+        @RenderBody()
+    }
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+
+</html>

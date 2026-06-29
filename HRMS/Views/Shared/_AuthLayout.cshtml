@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HRMS Access</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        :root {
+            --auth-bg-start: #f8f1ea;
+            --auth-bg-end: #dceaf5;
+            --auth-primary: #145f78;
+            --auth-primary-hover: #0e495c;
+            --auth-card: #ffffff;
+            --auth-text: #1f2937;
+            --auth-muted: #6b7280;
+            --auth-ring: rgba(20, 95, 120, 0.2);
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--auth-text);
+            background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.9), transparent 30%),
+                        radial-gradient(circle at 80% 10%, rgba(20, 95, 120, 0.14), transparent 35%),
+                        linear-gradient(135deg, var(--auth-bg-start), var(--auth-bg-end));
+        }
+
+        .auth-shell {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 460px;
+            background: var(--auth-card);
+            border-radius: 18px;
+            border: 1px solid rgba(20, 95, 120, 0.08);
+            box-shadow: 0 20px 40px rgba(31, 41, 55, 0.12);
+            padding: 2rem;
+            animation: authFade 420ms ease-out;
+        }
+
+        .auth-title {
+            margin-bottom: 0.25rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+        }
+
+        .auth-subtitle {
+            margin-bottom: 1.5rem;
+            color: var(--auth-muted);
+            font-size: 0.95rem;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--auth-primary);
+            box-shadow: 0 0 0 0.2rem var(--auth-ring);
+        }
+
+        .btn-auth {
+            background: var(--auth-primary);
+            border-color: var(--auth-primary);
+        }
+
+        .btn-auth:hover,
+        .btn-auth:focus {
+            background: var(--auth-primary-hover);
+            border-color: var(--auth-primary-hover);
+        }
+
+        .auth-links {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: space-between;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .auth-links a {
+            color: var(--auth-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .auth-links a:hover {
+            text-decoration: underline;
+        }
+
+        @@keyframes authFade {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @@media (max-width: 576px) {
+            .auth-card {
+                padding: 1.5rem;
+                border-radius: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="auth-shell">
+        <section class="auth-card">
+            @RenderBody()
+        </section>
+    </main>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

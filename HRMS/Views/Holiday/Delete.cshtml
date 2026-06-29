@@ -1,0 +1,43 @@
+﻿@model HRMS.Models.Holiday
+
+<h2>Delete Holiday</h2>
+
+<div class="alert alert-danger">
+    Are you sure you want to delete this holiday?
+</div>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Holiday Name</th>
+        <td>@Model.HolidayName</td>
+    </tr>
+
+    <tr>
+        <th>Holiday Date</th>
+        <td>@Model.HolidayDate.ToShortDateString()</td>
+    </tr>
+
+    <tr>
+        <th>Description</th>
+        <td>@Model.Description</td>
+    </tr>
+
+</table>
+
+<form asp-action="Delete">
+
+    <input type="hidden"
+           asp-for="HolidayId" />
+
+    <button type="submit"
+            class="btn btn-danger">
+        Delete
+    </button>
+
+    <a asp-action="Index"
+       class="btn btn-secondary">
+        Cancel
+    </a>
+
+</form>

@@ -86,20 +86,6 @@ namespace HRMS.Controllers
                     "EMP" + (codeNumber + 1).ToString("D3");
             }
 
-            /*var lastEmployee = _context.Employees
-                .OrderByDescending(x => x.EmployeeId)
-                .FirstOrDefault();
-
-            if (lastEmployee == null)
-            {
-                employee.EmployeeCode = "EMP001";
-            }
-            else
-            {
-                int nextId = lastEmployee.EmployeeId + 1;
-                employee.EmployeeCode = "EMP" + nextId.ToString("D3");
-            }*/
-
             if (ModelState.IsValid)
             {
                 _context.Employees.Add(employee);
@@ -107,7 +93,8 @@ namespace HRMS.Controllers
 
                 AuditLog log = new AuditLog()
                 {
-                    UserName = HttpContext.Session.GetString("UserName"),
+                    //UserName = HttpContext.Session.GetString("UserName"),
+                    UserName = User.Identity?.Name,
                     ActionType = "Create",
                     ModuleName = "Employee",
                     Description = "Employee Added : " + employee.FirstName,
@@ -233,7 +220,8 @@ namespace HRMS.Controllers
 
             AuditLog log = new AuditLog()
             {
-                UserName = HttpContext.Session.GetString("UserName"),
+                //UserName = HttpContext.Session.GetString("UserName"),
+                UserName = User.Identity?.Name,
                 ActionType = "Update",
                 ModuleName = "Employee",
                 Description = "Updated Employee : " + emp.FirstName,
@@ -267,7 +255,8 @@ namespace HRMS.Controllers
             {
                 AuditLog log = new AuditLog()
                 {
-                    UserName = HttpContext.Session.GetString("UserName"),
+                    //UserName = HttpContext.Session.GetString("UserName"),
+                    UserName = User.Identity?.Name,
                     ActionType = "Delete",
                     ModuleName = "Employee",
                     Description = "Deleted Employee : " + employee.FirstName,

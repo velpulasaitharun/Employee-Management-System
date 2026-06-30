@@ -126,7 +126,8 @@ namespace HRMS.Services
             var claims = new List<Claim>
             {
                 new(ClaimTypes.NameIdentifier, user.UserId.ToString()),
-                new(ClaimTypes.Name, user.UserName ?? string.Empty),
+                //new(ClaimTypes.Name, user.UserName ?? string.Empty),
+                new Claim(ClaimTypes.Name, employeeName),
                 new(ClaimTypes.Role, user.RoleName ?? "Employee"),
                 new(CustomClaimTypes.EmployeeId, user.EmployeeId.ToString()),
                 new(CustomClaimTypes.EmployeeName, employeeName),

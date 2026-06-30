@@ -89,45 +89,6 @@ namespace HRMS.Controllers
 
             _context.SaveChanges();
 
-
-            /*var yesterday = DateTime.Today.AddDays(-1);
-
-            // Missed Punch Out
-            var missedPunchOut = _context.Attendances
-                .Where(x => x.AttendanceDate.Date == yesterday &&
-                            x.PunchOut == null)
-                .ToList();
-
-            foreach (var item in missedPunchOut)
-            {
-                if (item.PunchIn != DateTime.MinValue)
-                {
-                    item.Status = "Missed Punch Out";
-                }
-            }
-
-            // Absent Employees
-            var employees = _context.Employees.ToList();
-
-            foreach (var emp in employees)
-            {
-                bool attendanceExists = _context.Attendances.Any(a =>
-                    a.EmployeeId == emp.EmployeeId &&
-                    a.AttendanceDate.Date == yesterday);
-
-                if (!attendanceExists)
-                {
-                    _context.Attendances.Add(new Attendance
-                    {
-                        EmployeeId = emp.EmployeeId,
-                        AttendanceDate = yesterday,
-                        Status = "Absent",
-                        TotalHours = 0
-                    });
-                }
-            }
-
-            _context.SaveChanges();*/
         }
         // LIST
         [Authorize]
@@ -195,7 +156,8 @@ namespace HRMS.Controllers
 
             AuditLog log = new AuditLog()
             {
-                UserName = HttpContext.Session.GetString("UserName"),
+                //UserName = HttpContext.Session.GetString("UserName"),
+                UserName = User.Identity?.Name,
                 ActionType = "Create",
                 ModuleName = "Attendance",
                 Description = "Attendance Added for Employee ID : " + attendance.EmployeeId,
@@ -343,7 +305,8 @@ namespace HRMS.Controllers
 
             AuditLog log = new AuditLog()
             {
-                UserName = HttpContext.Session.GetString("UserName"),
+                //UserName = HttpContext.Session.GetString("UserName"),
+                UserName = User.Identity?.Name,
                 ActionType = "Update",
                 ModuleName = "Attendance",
                 Description = "Attendance Updated for Employee ID : " + attendance.EmployeeId,
@@ -382,7 +345,8 @@ namespace HRMS.Controllers
             {
                 AuditLog log = new AuditLog()
                 {
-                    UserName = HttpContext.Session.GetString("UserName"),
+                    //UserName = HttpContext.Session.GetString("UserName"),
+                    UserName = User.Identity?.Name,
                     ActionType = "Delete",
                     ModuleName = "Attendance",
                     Description = "Attendance Deleted for Employee ID : " + attendance.EmployeeId,

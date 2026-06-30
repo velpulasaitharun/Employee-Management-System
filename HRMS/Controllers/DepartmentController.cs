@@ -41,7 +41,8 @@ namespace HRMS.Controllers
 
                 AuditLog log = new AuditLog()
                 {
-                    UserName = HttpContext.Session.GetString("UserName"),
+                    //UserName = HttpContext.Session.GetString("UserName"),
+                    UserName = User.Identity?.Name,
                     ActionType = "Create",
                     ModuleName = "Department",
                     Description = "Department Added : " + department.DepartmentName,
@@ -82,7 +83,8 @@ namespace HRMS.Controllers
 
                 AuditLog log = new AuditLog()
                 {
-                    UserName = HttpContext.Session.GetString("UserName"),
+                    //UserName = HttpContext.Session.GetString("UserName"),
+                    UserName = User.Identity?.Name,
                     ActionType = "Update",
                     ModuleName = "Department",
                     Description = "Department Updated : " + department.DepartmentName,
@@ -135,7 +137,8 @@ namespace HRMS.Controllers
             {
                 AuditLog log = new AuditLog()
                 {
-                    UserName = HttpContext.Session.GetString("UserName"),
+                    //UserName = HttpContext.Session.GetString("UserName"),
+                    UserName = User.Identity?.Name,
                     ActionType = "Delete",
                     ModuleName = "Department",
                     Description = "Department Deleted : " + department.DepartmentName,

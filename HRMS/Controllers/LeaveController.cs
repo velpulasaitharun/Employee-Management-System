@@ -59,13 +59,6 @@ namespace HRMS.Controllers
 
             return View(myLeaves);
 
-            /*
-            var leaves = _context.LeaveRequests
-                .Include(x => x.Employee)
-                .Include(x => x.LeaveType)
-                .ToList();
-
-            return View(leaves);*/
         }
 
         // CREATE GET
@@ -98,32 +91,6 @@ namespace HRMS.Controllers
             };
 
             return View(leave);
-
-            /*
-            ViewBag.LeaveTypes = new SelectList(
-          _context.LeaveTypes,
-          "LeaveTypeId",
-          "LeaveName");
-
-            if (User.IsInRole("Admin") || User.IsInRole("HR"))
-            {
-                ViewBag.Employees = new SelectList(
-                    _context.Employees,
-                    "EmployeeId",
-                    "FullName");
-            }
-            else
-            {
-                int employeeId =
-        HttpContext.Session.GetInt32("EmployeeId") ?? 0;
-
-                var employee = _context.Employees
-                    .FirstOrDefault(x => x.EmployeeId == employeeId);
-
-                ViewBag.EmployeeName = employee?.FullName;
-            }
-
-            return View(new LeaveRequest());*/
         }
 
         // CREATE POST
@@ -236,7 +203,8 @@ namespace HRMS.Controllers
             _context.SaveChanges();
            AuditLog log = new AuditLog()
             {
-                UserName = HttpContext.Session.GetString("UserName"),
+                //UserName = HttpContext.Session.GetString("UserName"),
+                UserName = User.Identity?.Name,
                 ActionType = "Create",
                 ModuleName = "Leave",
                 Description = "Applied Leave Request ID : " + leave.LeaveRequestId,
@@ -251,100 +219,6 @@ namespace HRMS.Controllers
 
             return RedirectToAction(nameof(Index));
 
-            /*if (!User.IsInRole("Admin") && !User.IsInRole("HR"))
-            {
-                leave.EmployeeId =
-                    HttpContext.Session.GetInt32("EmployeeId") ?? 0;
-            }
-
-            var employee = _context.Employees
-                .FirstOrDefault(x => x.EmployeeId == leave.EmployeeId);
-
-            var leaveType = _context.LeaveTypes
-                .FirstOrDefault(x => x.LeaveTypeId == leave.LeaveTypeId);
-
-            if (employee == null)
-            {
-                ViewBag.Message = "Employee not found.";
-
-                ViewBag.LeaveTypes = new SelectList(
-                    _context.LeaveTypes,
-                    "LeaveTypeId",
-                    "LeaveName");
-
-                return View(leave);
-            }
-
-            if (leaveType == null)
-            {
-                ViewBag.Message = "Please select Leave Type.";
-
-                ViewBag.LeaveTypes = new SelectList(
-                    _context.LeaveTypes,
-                    "LeaveTypeId",
-                    "LeaveName");
-
-                return View(leave);
-            }
-
-            string gender = employee.Gender?.Trim() ?? "";
-
-            // Maternity Leave Validation
-            if (string.Equals(
-                    leaveType.LeaveName,
-                    "Maternity Leave",
-                    StringComparison.OrdinalIgnoreCase)
-                &&
-                !string.Equals(
-                    gender,
-                    "Female",
-                    StringComparison.OrdinalIgnoreCase))
-            {
-                ViewBag.Message = "Only Female Employees are eligible for Maternity Leave.";
-
-                ViewBag.LeaveTypes = new SelectList(
-                    _context.LeaveTypes,
-                    "LeaveTypeId",
-                    "LeaveName");
-
-                return View(leave);
-            }
-
-            // Paternity Leave Validation
-            if (string.Equals(
-                    leaveType.LeaveName,
-                    "Paternity Leave",
-                    StringComparison.OrdinalIgnoreCase)
-                &&
-                !string.Equals(
-                    gender,
-                    "Male",
-                    StringComparison.OrdinalIgnoreCase))
-            {
-                ViewBag.Message = "Only Male Employees are eligible for Paternity Leave.";
-
-                ViewBag.LeaveTypes = new SelectList(
-                    _context.LeaveTypes,
-                    "LeaveTypeId",
-                    "LeaveName");
-
-                return View(leave);
-            }
-        
-
-            leave.NoOfDays =
-                (leave.ToDate - leave.FromDate).Days + 1;
-
-            leave.Status = "Pending";
-            leave.AppliedDate = DateTime.Now;
-
-            _context.LeaveRequests.Add(leave);
-            _context.SaveChanges();
-
-            TempData["Success"] =
-                "Leave Request Submitted Successfully.";
-
-            return RedirectToAction(nameof(Index));*/
         }
 
         // DETAILS
@@ -390,24 +264,7 @@ namespace HRMS.Controllers
 
             return View(leave);
 
-            /*  var leave = _context.LeaveRequests.Find(id);
-
-              if (leave == null)
-                  return NotFound();
-
-              ViewBag.Employees = new SelectList(
-                  _context.Employees,
-                  "EmployeeId",
-                  "FullName",
-                  leave.EmployeeId);
-
-              ViewBag.LeaveTypes = new SelectList(
-                  _context.LeaveTypes,
-                  "LeaveTypeId",
-                  "LeaveName",
-                  leave.LeaveTypeId);
-
-              return View(leave);*/
+           
         }
 
         // EDIT POST
@@ -438,16 +295,7 @@ namespace HRMS.Controllers
                 TempData["Error"] = "Approved or Rejected leave cannot be edited.";
                 return RedirectToAction(nameof(Index));
             }
-            // Cannot edit after approval/rejection
-            /* if (existingLeave.Status == "Approved" ||
-                 existingLeave.Status == "Rejected")
-             {
-                 ViewBag.Message =
-                     "Approved or Rejected leave cannot be edited.";
-
-                 return View(existingLeave);
-             }*/
-
+           
             // From Date Required
             if (!leave.FromDate.HasValue)
             {
@@ -543,7 +391,8 @@ namespace HRMS.Controllers
             _context.SaveChanges();
             AuditLog log = new AuditLog()
             {
-                UserName = HttpContext.Session.GetString("UserName"),
+                //UserName = HttpContext.Session.GetString("UserName"),
+                UserName = User.Identity?.Name,
                 ActionType = "Edit",
                 ModuleName = "Leave",
                 Description = "Updated Leave Request ID : " + existingLeave.LeaveRequestId,
@@ -558,71 +407,6 @@ namespace HRMS.Controllers
 
             return RedirectToAction(nameof(Index));
 
-
-
-            /*if (!leave.FromDate.HasValue || !leave.ToDate.HasValue)
-            {
-                ViewBag.Message = "Please select From Date and To Date.";
-
-                ViewBag.EmployeeName = _context.Employees
-                    .Where(x => x.EmployeeId == leave.EmployeeId)
-                    .Select(x => x.FullName)
-                    .FirstOrDefault();
-
-                ViewBag.LeaveTypes = new SelectList(
-                    _context.LeaveTypes,
-                    "LeaveTypeId",
-                    "LeaveName",
-                    leave.LeaveTypeId);
-
-                return View(leave);
-            }
-
-            if (leave.ToDate.Value < leave.FromDate.Value)
-            {
-                ViewBag.Message =
-                    "To Date cannot be less than From Date.";
-
-                ViewBag.EmployeeName = _context.Employees
-                    .Where(x => x.EmployeeId == leave.EmployeeId)
-                    .Select(x => x.FullName)
-                    .FirstOrDefault();
-
-                ViewBag.LeaveTypes = new SelectList(
-                    _context.LeaveTypes,
-                    "LeaveTypeId",
-                    "LeaveName",
-                    leave.LeaveTypeId);
-
-                return View(leave);
-            }
-
-            var existingLeave = _context.LeaveRequests
-                .FirstOrDefault(x =>
-                    x.LeaveRequestId == leave.LeaveRequestId);
-
-            if (existingLeave == null)
-                return NotFound();
-
-            existingLeave.LeaveTypeId = leave.LeaveTypeId;
-            existingLeave.FromDate = leave.FromDate;
-            existingLeave.ToDate = leave.ToDate;
-            existingLeave.Reason = leave.Reason;
-
-            existingLeave.NoOfDays =
-                (leave.ToDate.Value - leave.FromDate.Value).Days + 1;
-
-            _context.SaveChanges();
-
-            return RedirectToAction(nameof(Index));*/
-
-            /* leave.NoOfDays =
-                 (leave.ToDate - leave.FromDate).Days + 1;
-
-             _context.LeaveRequests.Update(leave);
-             _context.SaveChanges();
-
-             return RedirectToAction(nameof(Index));*/
         }
 
         // DELETE GET
@@ -655,7 +439,8 @@ namespace HRMS.Controllers
 
     AuditLog log = new AuditLog()
     {
-        UserName = HttpContext.Session.GetString("UserName"),
+        //UserName = HttpContext.Session.GetString("UserName"),
+        UserName = User.Identity?.Name,
         ActionType = "Delete",
         ModuleName = "Leave",
         Description = "Deleted Leave Request ID : " + leave.LeaveRequestId,
@@ -670,15 +455,6 @@ namespace HRMS.Controllers
 
     return RedirectToAction(nameof(Index));
 
-            /*var leave = _context.LeaveRequests.Find(id);
-
-            if (leave != null)
-            {
-                _context.LeaveRequests.Remove(leave);
-                _context.SaveChanges();
-            }
-
-            return RedirectToAction(nameof(Index));*/
         }
 
         [HttpPost]
@@ -705,7 +481,8 @@ namespace HRMS.Controllers
 
             AuditLog log = new AuditLog()
             {
-                UserName = HttpContext.Session.GetString("UserName"),
+                //UserName = HttpContext.Session.GetString("UserName"),
+                UserName = User.Identity?.Name,
                 ActionType = "Approve",
                 ModuleName = "Leave",
                 Description = "Approved Leave Request ID : " + leave.LeaveRequestId,
@@ -716,45 +493,10 @@ namespace HRMS.Controllers
 
             _context.SaveChanges();
 
-            /* leave.Status = "Approved";
-
-             AuditLog log = new AuditLog()
-             {
-                 UserName = HttpContext.Session.GetString("UserName"),
-                 ActionType = "Approve",
-                 ModuleName = "Leave",
-                 Description = "Approved Leave Request ID : " + leave.LeaveRequestId,
-                 ActionDate = DateTime.Now
-             };
-
-             _context.AuditLogs.Add(log);
-             _context.SaveChanges();*/
-
             TempData["Success"] = "Leave Approved Successfully.";
 
             return RedirectToAction(nameof(Index));
 
-
-            /*var leave = _context.LeaveRequests.Find(id);
-
-            if (leave != null)
-            {
-                leave.Status = "Approved";
-
-                AuditLog log = new AuditLog()
-                {
-                    UserName = HttpContext.Session.GetString("UserName"),
-                    ActionType = "Approve",
-                    ModuleName = "Leave",
-                    Description = "Approved Leave Request ID : " + leave.LeaveRequestId,
-                    ActionDate = DateTime.Now
-                };
-
-                _context.AuditLogs.Add(log);
-                _context.SaveChanges();
-            }
-
-            return RedirectToAction(nameof(Index));*/
         }
 
         [HttpPost]
@@ -780,7 +522,8 @@ namespace HRMS.Controllers
 
             AuditLog log = new AuditLog()
             {
-                UserName = HttpContext.Session.GetString("UserName"),
+                //UserName = HttpContext.Session.GetString("UserName"),
+                UserName = User.Identity?.Name,
                 ActionType = "Reject",
                 ModuleName = "Leave",
                 Description = "Rejected Leave Request ID : " + leave.LeaveRequestId,
@@ -791,46 +534,10 @@ namespace HRMS.Controllers
 
             _context.SaveChanges();
 
-            /*leave.Status = "Rejected";
-
-            AuditLog log = new AuditLog()
-            {
-                UserName = HttpContext.Session.GetString("UserName"),
-                ActionType = "Reject",
-                ModuleName = "Leave",
-                Description = "Rejected Leave Request ID : " + leave.LeaveRequestId,
-                ActionDate = DateTime.Now
-            };
-
-            _context.AuditLogs.Add(log);
-            _context.SaveChanges();*/
-
-
             TempData["Success"] = "Leave Rejected Successfully.";
 
             return RedirectToAction(nameof(Index));
 
-
-            /* var leave = _context.LeaveRequests.Find(id);
-
-             if (leave != null)
-             {
-                 leave.Status = "Rejected";
-
-                 AuditLog log = new AuditLog()
-                 {
-                     UserName = HttpContext.Session.GetString("UserName"),
-                     ActionType = "Reject",
-                     ModuleName = "Leave",
-                     Description = "Rejected Leave Request ID : " + leave.LeaveRequestId,
-                     ActionDate = DateTime.Now
-                 };
-
-                 _context.AuditLogs.Add(log);
-                 _context.SaveChanges();
-             }
-
-             return RedirectToAction(nameof(Index));*/
         }
     }
 }

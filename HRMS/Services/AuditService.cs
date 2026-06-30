@@ -41,7 +41,7 @@ namespace HRMS.Services
                     ActionType = actionType,
                     ModuleName = moduleName,
                     Description = description,
-                    ActionDate = DateTime.UtcNow
+                    ActionDate = DateTime.Now
                 };
 
                 _context.AuditLogs.Add(log);

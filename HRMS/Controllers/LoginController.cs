@@ -1,4 +1,5 @@
-﻿using HRMS.Data;
+﻿using HRMS.Constants;
+using HRMS.Data;
 using HRMS.Services.Interfaces;
 using HRMS.ViewModels.Auth;
 using Microsoft.AspNetCore.Authentication;
@@ -106,7 +107,8 @@ namespace HRMS.Controllers
                 "Login",
                 "Authentication",
                 "User logged in.",
-                user.UserName,
+                //user.UserName,
+                employeeName,
                 cancellationToken);
 
             _logger.LogInformation("User {UserName} logged in successfully.", user.UserName);
@@ -209,13 +211,16 @@ namespace HRMS.Controllers
         [Authorize]
         public async Task<IActionResult> Logout(CancellationToken cancellationToken)
         {
-            var userName = User.Identity?.Name;
+            //var userName = User.Identity?.Name;
+            var employeeName = User.FindFirst(CustomClaimTypes.EmployeeName)?.Value
+                   ?? User.Identity?.Name;
 
             await _auditService.LogAsync(
                 "Logout",
                 "Authentication",
                 "User logged out.",
-                userName,
+                //userName,
+                employeeName,
                 cancellationToken);
 
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);

@@ -89,7 +89,8 @@ payroll.DA;
 
             AuditLog log = new AuditLog()
             {
-                UserName = HttpContext.Session.GetString("UserName"),
+                //UserName = HttpContext.Session.GetString("UserName"),
+                UserName = User.Identity?.Name,
                 ActionType = "Generate",
                 ModuleName = "Payroll",
                 Description = "Payroll Generated for Employee ID : " + payroll.EmployeeId,
@@ -158,7 +159,8 @@ payroll.DA;
 
             AuditLog log = new AuditLog()
             {
-                UserName = HttpContext.Session.GetString("UserName"),
+                //UserName = HttpContext.Session.GetString("UserName"),
+                UserName = User.Identity?.Name,
                 ActionType = "Update",
                 ModuleName = "Payroll",
                 Description = "Payroll Updated for Employee ID : " + payroll.EmployeeId,
@@ -197,7 +199,8 @@ payroll.DA;
             {
                 AuditLog log = new AuditLog()
                 {
-                    UserName = HttpContext.Session.GetString("UserName"),
+                    //UserName = HttpContext.Session.GetString("UserName"),
+                    UserName = User.Identity?.Name,
                     ActionType = "Delete",
                     ModuleName = "Payroll",
                     Description = "Payroll Deleted for Employee ID : " + payroll.EmployeeId,
